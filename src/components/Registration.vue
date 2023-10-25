@@ -1,24 +1,74 @@
 <script setup>
+import { ref } from "vue";
 import Layout from "../components/Layout.vue";
+import { authStore } from "../store/store";
+import router from "../router/router";
+
+const username = ref("");
+const email = ref("");
+const password = ref("");
+const confirmPassword = ref("");
+const userType = ref("");
+
+const register = () => {
+  if (password.value !== confirmPassword.value) {
+    alert("Passwords do not match");
+    return;
+  }
+
+  try {
+    authStore.registerUser({
+      email: email.value,
+      password: password.value,
+      usertype: userType.value,
+    });
+    alert("Registration successful");
+    router.push("/login");
+  } catch (error) {
+    alert(error.message);
+  }
+};
 </script>
 <template>
   <div>
     <Layout>
       <div class="registration-container">
-        <h2>Registration Form</h2>
-        <form>
-          <input type="text" placeholder="Username" name="username" required />
-          <input type="email" placeholder="Email" name="email" required />
+        <h2 class="font-bold text-2xl my-6">Registration Form</h2>
+        <form @submit.prevent="register">
           <input
+            v-model="username"
+            type="text"
+            placeholder="Username"
+            name="username"
+            required
+          />
+          <input
+            v-model="email"
+            type="email"
+            placeholder="Email"
+            name="email"
+            required
+          />
+          <input
+            v-model="password"
             type="password"
             placeholder="Password"
             name="password"
             required
           />
           <input
+            v-model="confirmPassword"
             type="password"
             placeholder="Confirm Password"
             name="confirmPassword"
+            required
+          />
+
+          <input
+            v-model="userType"
+            type="text"
+            placeholder="Type Of User"
+            name="userType"
             required
           />
 
@@ -31,9 +81,9 @@ import Layout from "../components/Layout.vue";
 
 <style scoped>
 .registration-container {
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 40px;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;

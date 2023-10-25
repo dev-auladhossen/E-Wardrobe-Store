@@ -1,4 +1,3 @@
-//create home component
 <script setup>
 import Layout from "../components/Layout.vue";
 import { useRoute } from "vue-router";

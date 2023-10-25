@@ -4,11 +4,21 @@ import Layout from "../components/Layout.vue";
 <template>
   <div>
     <Layout>
-      <div>      
+      <div>
         <section class="hero">
-          <h2>Welcome to our store!</h2>
-          <p>Discover the best products for your needs.</p>
-          <a href="#" class="btn">Shop Now</a>
+          <div class="flex gap-8 items-center">
+            <img
+              height="500"
+              width="500"
+              src="https://www.corporatevision-news.com/wp-content/uploads/2021/04/ecommerce.jpg"
+              alt=""
+            />
+            <div>
+              <h1 class="text-2xl font-bold my-3">Welcome to our store!</h1>
+              <p>Discover the best products for your needs.</p>
+              <a href="/products" class="btn">Shop Now</a>
+            </div>
+          </div>
         </section>
       </div>
     </Layout>
@@ -17,7 +27,7 @@ import Layout from "../components/Layout.vue";
 
 <style scoped>
 header {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   padding: 20px;
   text-align: center;
 }
@@ -40,7 +50,7 @@ nav ul li a {
 .hero {
   text-align: center;
   padding: 50px;
-  background-color: #e6e6e6;
+  background-color: #ffffff;
 }
 
 /* Styling for the products section */

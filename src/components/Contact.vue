@@ -4,14 +4,24 @@ import Layout from "../components/Layout.vue";
 <template>
   <div>
     <Layout>
-      <section class="contact-form">
-        <h2>Contact Us</h2>
-        <form>
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" rows="5" required></textarea>
-          <button type="submit">Submit</button>
-        </form>
+      <section class="contact-form p-6 flex gap-6">
+        <div>
+          <img
+            src="https://www.jaispring.com/assets/img/responsive-banner/contact-banner.jpg"
+            height="400"
+            width="400"
+            alt=""
+          />
+        </div>
+        <div>
+          <h2>Contact Us</h2>
+          <form>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </section>
     </Layout>
   </div>
@@ -20,7 +30,6 @@ import Layout from "../components/Layout.vue";
 <style scoped>
 .contact-form {
   text-align: center;
-  padding: 50px;
 }
 
 .contact-form h2 {

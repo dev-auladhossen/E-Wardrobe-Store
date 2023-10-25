@@ -26,7 +26,7 @@ const checkout = () => {
 <template>
   <Layout>
     <div class="bg-white">
-      <div class="mx-auto px-12 py-8">
+      <div v-if="cart.totalCartItems > 0" class="mx-auto px-12 py-8">
         <h2 class="text-2xl font-bold tracking-tight text-gray-900">
           Your Cart
         </h2>
@@ -88,6 +88,12 @@ const checkout = () => {
             Proceed To Checkout
           </button>
         </div>
+      </div>
+      <div v-else class="bg-slate-100 h-[300px] flex flex-col justify-center">
+        <h1 class="text-3xl font-[700] font-mon text-center pt-8 mb-4">
+          Your cart is empty!
+        </h1>
+        <a href="/products">Add Your Products to Cart.</a>
       </div>
     </div>
   </Layout>

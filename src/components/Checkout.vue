@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div v-if="!checkoutCompleted" class="bg-white">
+    <div v-if="!checkoutCompleted && cart.totalCartItems > 0" class="bg-white">
       <h1 class="text-4xl font-bold my-4">Checkout</h1>
       <div class="font-bold my-6 text-gray-400">
         <span :class="{ 'text-teal-500': contactInfoCompleted }">
@@ -52,6 +52,12 @@
           @payment="payment"
         />
       </div>
+    </div>
+    <div v-else class="bg-slate-100 h-[300px] flex flex-col justify-center">
+      <h1 class="text-3xl font-[700] font-mon text-center pt-8 mb-4">
+        Your cart is empty!
+      </h1>
+      <a href="/products">Add Your Products to Cart.</a>
     </div>
   </Layout>
 </template>
