@@ -2,6 +2,8 @@ import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
 import router from "./router/router.js";
+import Toast, { POSITION } from "vue-toastification";
+import "vue-toastification/dist/index.css";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -28,6 +30,9 @@ library.add(faArrowsLeftRightToLine);
 
 const app = createApp(App);
 app.use(router);
+app.use(Toast, {
+  position: POSITION.BOTTOM_RIGHT,
+});
 app.use(VueSweetalert2);
 app.component("EasyDataTable", Vue3EasyDataTable);
 app.component("font-awesome-icon", FontAwesomeIcon);

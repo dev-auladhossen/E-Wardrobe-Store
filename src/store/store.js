@@ -7,6 +7,7 @@ const authStore = reactive({
   user: JSON.parse(localStorage.getItem("user")),
   users: JSON.parse(localStorage.getItem("users")),
   authenticate(username, password) {
+    console.log(username, password);
     fetch("https://dummyjson.com/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

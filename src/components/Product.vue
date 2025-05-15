@@ -9,14 +9,13 @@ const id = route.params.id;
 const product = reactive({});
 const comments = ref([]);
 onBeforeMount(() => {
-  axios.get(`https://ecom.coderstream.com/api/products/${id}`).then((res) => {
+  axios.get(`https://api.escuelajs.co/api/v1/products/${id}`).then((res) => {
     product.id = res.data.id;
     product.title = res.data.title;
     product.body = res.data.body;
-    product.image = res.data.image;
+    product.images = res.data.images;
     product.price = res.data.price;
-    product.category = res.data.category;
-    product.rating_count = res.data.rating_count;
+    product.category = res.data.category.name;
     product.description = res.data.description;
   });
 });
@@ -29,12 +28,11 @@ onBeforeMount(() => {
           {{ product.title }}
         </h1>
         <div class="flex gap-3">
-          <img class="w-60" :src="product.image" alt="" />
+          <img class="w-60" :src="product.images" alt="" />
           <div class="text-left">
             {{ product.description }}
             <div>
               <p class="my-3">Category: {{ product.category }}</p>
-              <p class="my-3">Rating: {{ product.rating_count }}</p>
               <p class="font-bold my-3">Price: ${{ product.price }}</p>
               <button
                 @click="cart.addItem(product)"

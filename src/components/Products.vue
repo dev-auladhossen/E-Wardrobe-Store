@@ -1,13 +1,14 @@
 <script setup>
 import Layout from "../components/Layout.vue";
+import data from "../data.json";
 import { ref, onBeforeMount } from "vue";
 import axios from "axios";
 import { cart } from "../store/cart";
 const products = ref([]);
 
 onBeforeMount(() => {
-  axios.get("https://ecom.coderstream.com/api/products").then((res) => {
-    products.value = res.data.data;
+  axios.get("https://api.escuelajs.co/api/v1/products").then((res) => {
+    products.value = res.data;
     console.log("res", products.value);
   });
 });
@@ -52,8 +53,8 @@ const sortType = ["desc", "asc"];
               :sort-type="sortType"
               multi-sort
             >
-              <template #item-image="{ image }">
-                <img :src="image" height="50" width="50" class="m-2" alt="" />
+              <template #item-image="{ images }">
+                <img :src="images" height="50" width="50" class="m-2" alt="" />
               </template>
               <template #item-price="{ price }"> ${{ price }} </template>
               <template #item-title="{ id, title }">

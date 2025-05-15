@@ -1,8 +1,11 @@
 import { ref, reactive, computed } from "vue";
+import { useToast } from "vue-toastification";
 
 const checkoutCompleted = ref(false);
 const orderNumber = ref("");
 const estimatedDeliveryDate = ref("");
+
+const toast = useToast();
 
 const cart = reactive({
   items: {},
@@ -30,10 +33,17 @@ const cart = reactive({
       };
     }
     this.saveCartInLocalStorage();
+
+    toast.success("Item added In the cart!", {
+      timeout: 2000,
+    });
   },
   removeItem(product) {
     delete this.items[product.id];
     this.saveCartInLocalStorage();
+    toast.info("Item Removed", {
+      timeout: 2000,
+    });
   },
   emptyCart() {
     this.items = {};

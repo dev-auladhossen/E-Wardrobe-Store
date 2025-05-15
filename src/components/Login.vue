@@ -7,8 +7,9 @@ const auth = authStore;
 
 import router from "../router/router";
 
-const username = ref("kminchelle");
-const password = ref("0lelplR");
+const username = ref("emilys");
+const password = ref("emilyspass");
+
 </script>
 <template>
   <div>

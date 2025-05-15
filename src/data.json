@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Vintage Leather Jacket",
+    "image": "https://via.placeholder.com/50x50?text=Jacket",
+    "price": 99.99
+  },
+  {
+    "id": 2,
+    "title": "Smartphone X100",
+    "image": "https://via.placeholder.com/50x50?text=Phone",
+    "price": 499.99
+  },
+  {
+    "id": 3,
+    "title": "Running Shoes",
+    "image": "https://via.placeholder.com/50x50?text=Shoes",
+    "price": 69.5
+  },
+  {
+    "id": 4,
+    "title": "Bluetooth Headphones",
+    "image": "https://via.placeholder.com/50x50?text=Headphones",
+    "price": 89.99
+  },
+  {
+    "id": 5,
+    "title": "Wooden Coffee Table",
+    "image": "https://via.placeholder.com/50x50?text=Table",
+    "price": 129.99
+  },
+  {
+    "id": 6,
+    "title": "Gaming Mouse",
+    "image": "https://via.placeholder.com/50x50?text=Mouse",
+    "price": 39.99
+  },
+  {
+    "id": 7,
+    "title": "4K LED Monitor",
+    "image": "https://via.placeholder.com/50x50?text=Monitor",
+    "price": 299.99
+  },
+  {
+    "id": 8,
+    "title": "Stainless Steel Water Bottle",
+    "image": "https://via.placeholder.com/50x50?text=Bottle",
+    "price": 15.0
+  }
+]

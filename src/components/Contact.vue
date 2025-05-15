@@ -7,9 +7,9 @@ import Layout from "../components/Layout.vue";
       <section class="contact-form p-6 flex gap-6">
         <div>
           <img
-            src="https://www.jaispring.com/assets/img/responsive-banner/contact-banner.jpg"
-            height="400"
-            width="400"
+            src="https://img.freepik.com/premium-photo/businessman-choosing-icon_218381-540.jpg?semt=ais_hybrid&w=740"
+            height="600"
+            width="600"
             alt=""
           />
         </div>
